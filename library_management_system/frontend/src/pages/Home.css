@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
+
+
+/* LAYOUT ROOT */
+.home-root {
+  min-height: 100vh;
+}
+
+/* Welcome text as a normal block ABOVE the book */
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.welcome-text h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 60px;
+}
+
+.welcome-text p {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* BOOK WRAPPER – center book and fill viewport height under navbar */
+.book-wrapper {
+  width: 100%;
+  height: calc(100vh - 140px);   /* adjust if navbar height changes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+/* BOOK STYLES */
+:root {
+  --body-bg: #FAFAFA;
+  --page-bg: #F5F5F5;
+  --dark-text: #000;
+  --baseline: 12px;                    /* was 12px */
+  --book-title: 'Tulpen One', sans-serif;
+  --title: 'Cormorant Garamond', serif;
+  --body: 'Cormorant Garamond', serif;
+  --base-size: calc(var(--baseline) * 1.4);  /* was * 1.2 */
+}
+
+
+/* Global box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* COVER – responsive sizing */
+.cover {
+  width: min(70vw, 950px);   /* desktop: up to 70% of viewport width, capped */
+  height: min(70vh, 650px);  /* desktop: up to 70% of viewport height, capped */
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+}
+
+/* BOOK */
+.book {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  perspective: 1200px;
+}
+
+/* BOOK PAGE */
+.book__page {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: grid;
+  transform: rotateY(0deg);
+  transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: 0% 0%;
+  background-color: var(--page-bg);
+  background-image: linear-gradient(
+    90deg,
+    rgba(227, 227, 227, 1) 0%,
+    rgba(247, 247, 247, 0) 18%
+  );
+}
+
+.book__page:nth-of-type(1) {
+  background-image: linear-gradient(
+    -90deg,
+    rgba(227, 227, 227, 1) 0%,
+    rgba(247, 247, 247, 0) 18%
+  );
+}
+
+/* PAGE 1 */
+.book__page--1 {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.book__page--1 img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PAGE 2 */
+.book__page--2 {
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  background-color: var(--page-bg);
+  background-image: linear-gradient(
+    90deg,
+    rgba(227, 227, 227, 1) 0%,
+    rgba(247, 247, 247, 0) 18%
+  );
+}
+
+/* PAGE 4 */
+.book__page--4 {
+  cursor: pointer;
+  padding: 0 calc(var(--baseline) * 3);
+}
+
+/* FRONT & BACK */
+.book__page-front,
+.book__page-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.book__page-front {
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+.book__page-back {
+  padding: 0 calc(var(--baseline) * 1.8);
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+/* CONTENT */
+.page__content {
+  padding: var(--baseline);
+  height: 100%;
+  position: relative;
+  text-align: center;
+  color: #000;
+}
+
+.page__content-book-title {
+  font-family: var(--book-title);
+  font-size: calc(var(--base-size) * 3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #000;
+  margin-top: calc(var(--baseline) * 2);
+  margin-bottom: calc(var(--baseline) * 2);
+}
+
+.page__content-author {
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 1.2);
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: inline-block;
+  padding: calc(var(--baseline) / 2) calc(var(--baseline) / 5);
+  margin-bottom: calc(var(--baseline) * 6);
+}
+
+.page__content-credits {
+  font-family: var(--title);
+  text-transform: uppercase;
+  font-size: calc(var(--base-size) * 0.8);
+  margin-bottom: calc(var(--baseline) * 2);
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.page__content-credits span {
+  display: block;
+  font-size: calc(var(--base-size) * 1.2);
+  letter-spacing: 0;
+}
+
+.page__content-copyright {
+  position: absolute;
+  width: calc(100% - (var(--baseline) * 2));
+  bottom: calc(var(--baseline) * 2);
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 0.8);
+  text-transform: uppercase;
+  color: #000;
+}
+
+.page__content-title {
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 1.3);   /* bigger heading */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: calc(var(--baseline) * 4);
+  margin-bottom: calc(var(--baseline) * 3);
+  text-align: center;                        /* center title */
+}
+
+.page__content-table {
+  margin: 0 auto;                            /* center table block */
+}
+
+.page__content-table td {
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 1.05);  /* slightly larger names/roles */
+  padding: calc(var(--baseline) * 0.8) calc(var(--baseline) * 1.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+
+.page__content-blockquote-text {
+  font-family: var(--title);
+  font-size: 17px;
+  font-style: italic;
+  text-align: justify;
+  color: #000;
+}
+
+.page__content-blockquote-reference {
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 0.7);
+  margin-top: calc(var(--baseline) * 0.3);
+  float: right;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.page__content-text {
+  font-family: var(--title);
+  font-size: 17px;
+  text-align: justify;
+  text-indent: 0;          /* no first-line indent */
+  color: #000;
+}
+
+
+/* PAGE NUMBER */
+.page__number {
+  position: absolute;
+  bottom: var(--baseline);
+  width: calc(100% - (var(--baseline) * 2));
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 0.67);
+  text-align: center;
+  color: #000;
+}
+
+/* PAGE FLIP */
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .book__page {
+  transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: rotateY(-180deg);
+}
+
+/* Responsive scaling tweaks */
+@media (max-width: 900px) {
+  .book-wrapper {
+    height: calc(100vh - 120px);
+  }
+
+  .cover {
+    width: min(90vw, 700px);
+    height: min(75vh, 520px);
+  }
+}
+
+@media (max-width: 600px) {
+  .book-wrapper {
+    height: calc(100vh - 110px);
+  }
+
+  .cover {
+    width: 95vw;
+    height: 80vh;
+  }
+}

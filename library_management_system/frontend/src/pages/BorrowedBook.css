@@ -1,0 +1,461 @@
+.borrowed-book-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #f8f5f0;
+  font-family: 'Georgia', serif;
+}
+
+.library-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(49, 90, 57, 0.2);
+}
+
+.header-icon {
+  margin-right: 1rem;
+  color: #315a39;
+}
+
+.library-header h1 {
+  color: #315a39;
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 400;
+  font-family: 'Georgia', serif;
+}
+
+.stats-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  flex: 1;
+  background-color: rgba(49, 90, 57, 0.08);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(49, 90, 57, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card.overdue {
+  background-color: rgba(208, 98, 85, 0.08);
+  border-color: rgba(208, 98, 85, 0.15);
+}
+
+.stat-card.due-soon {
+  background-color: rgba(230, 126, 34, 0.08);
+  border-color: rgba(230, 126, 34, 0.15);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #315a39;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card.overdue .stat-number {
+  color: #d06255;
+}
+
+.stat-card.due-soon .stat-number {
+  color: #e67e22;
+}
+
+.stat-label {
+  color: #315a39;
+  font-size: 1rem;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(49, 90, 57, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column; /* keep cover + info stacked */
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.book-cover {
+  position: relative;
+  height: 240px;
+  background-color: #e8d9b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.book-cover img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: cover;
+}
+
+.book-status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.book-info {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-title {
+  margin: 0 0 0.5rem 0;
+  color: #315a39;
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.book-author {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+
+.due-date-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  background-color: rgba(49, 90, 57, 0.05);
+  border-radius: 6px;
+}
+
+.due-label {
+  font-weight: bold;
+  color: #666;
+  margin-right: 0.8rem;
+}
+
+.due-value {
+  color: #315a39;
+  font-weight: bold;
+}
+
+/* push actions to the bottom of card */
+.book-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Georgia', serif;
+}
+
+.renew-btn {
+  background-color: #315a39;
+  color: white;
+}
+
+.renew-btn:hover:not(:disabled) {
+  background-color: #284a2f;
+}
+
+.renew-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.return-btn {
+  background-color: #d06255;
+  color: white;
+}
+
+.return-btn:hover {
+  background-color: #b85344;
+}
+
+.pay-btn {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.pay-btn:hover {
+  background-color: #c4661b;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #666;
+}
+
+.empty-icon {
+  margin-bottom: 2rem;
+  opacity: 0.7;
+  color: #315a39;
+}
+
+.empty-state h3 {
+  color: #315a39;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* simple modal styling for Pay */
+.pay-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.pay-modal {
+  background: #fdfbf7;
+  padding: 1.8rem 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #111827
+}
+
+.pay-modal h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #315a39;
+}
+
+.pay-modal p {
+  margin: 0.3rem 0;
+  color: #111827;
+}
+
+.pay-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.close-btn {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.close-btn:hover {
+  background: #d1d5db;
+}
+
+.confirm-btn {
+  background: #315a39;
+  color: #fff;
+}
+
+.confirm-btn:hover {
+  background: #284a2f;
+}
+
+/* Borrow history styles you pasted */
+
+.borrow-history-container {
+  padding: 24px;
+}
+
+.borrow-history-title {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.borrow-history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.borrow-card {
+  background: #fdfbf7;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.borrow-cover-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.borrow-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.borrow-card-body {
+  padding: 16px 18px 18px;
+}
+
+.borrow-book-title {
+  font-size: 1.1rem;
+  margin: 0 0 4px;
+}
+
+.borrow-book-author {
+  margin: 0 0 12px;
+  font-style: italic;
+  color: #4b5563;
+}
+
+.borrow-dates p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.borrow-dates {
+  margin: 10px 0;
+}
+
+.borrow-status {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.borrow-status-borrowed {
+  color: #15803d;
+}
+
+.borrow-status-returned {
+  color: #b91c1c;
+}
+
+.borrow-return-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #b91c1c;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.borrow-return-btn:hover {
+  background: #991b1b;
+}
+
+/* Responsive + scrollbar */
+
+@media (max-width: 768px) {
+  .borrowed-book-container {
+    padding: 1.5rem;
+  }
+
+  .library-header h1 {
+    font-size: 2rem;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f5f0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #315a39;
+  border-radius: 10px;
+  border: 3px solid #f8f5f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #284a2f;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #315a39 #f8f5f0;
+}
+
+/* ensure stat labels keep theme color */
+.stats-container .stat-card .stat-label {
+  color: #315a39 !important;
+}

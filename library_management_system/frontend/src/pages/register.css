@@ -1,0 +1,335 @@
+/* Layout Containers */
+.register-layout {
+  display: flex;
+  min-height: 35vh;
+  max-width: 900px;
+  margin: 120px auto 0;  /* ito ang magpapa-“floating” sa gitna */
+  border-radius: 24px;        /* rounded corners */
+  overflow: hidden;           /* para sumunod ang laman sa curve */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* optional, para card effect */
+}
+
+
+/* Left (Form) Side */
+.register-left {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: #fff;
+  padding-top: 20px;
+}
+
+/* Right (Promo) Side */
+.register-right {
+  flex: 1;
+  display: flex;
+  max-width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #315a39, #97cf8a 80%);
+  color: #fff;
+  padding: 40px;
+}
+
+.register-left,
+.register-right {
+  width: 200px;                /* Limit width of both cards */
+  min-width: 320px;            
+  max-width: 90vw;             /* Responsive fallback */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form Container */
+.register-form {
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 32px;
+  box-shadow: 0 8px 32px 0 rgba(31,30,41,0.10);
+  border-radius: 60px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-logo {
+  display: block;
+  margin: 0 auto 24px auto;
+  width: 80px;
+  height: auto;
+}
+
+/* Form Title */
+.form-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 28px;
+  color: #232323;
+}
+
+/* Input Fields */
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+  width: 80%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #f4f4fa;
+  transition: box-shadow 0.3s, border 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.register-form input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #a8e6cf;
+  border: 1px solid #a8e6cf;
+}
+
+/* Button Styling */
+.register-form button {
+  position: relative;
+  background: #ffffff;
+  color: #315a39;
+  padding: 10px 32px;
+  border-radius: 999px;          /* pill shape */
+  border: 2px solid #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.register-form button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.register-form button:active {
+  transform: translateY(1px);
+}
+
+.register-form button::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: -1px;                 /* layo sa text */
+  height: 3px;
+  border-radius: 999px;
+  background: #ffffff;         /* underline color */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.register-form button:hover {
+  background: #315a39;   /* pill becomes green */
+  color: #ffffff;        /* text becomes white */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.register-form button:hover::after {
+  transform: scaleX(1);        /* lalabas yung underline */
+}
+
+
+
+.big-logo {
+  width: 300px;
+  margin-bottom: 5px;
+}
+/* Login button */
+
+.promo-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.promo-button {
+  margin-top: 32px;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #ffffff;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.promo-button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.promo-button:active {
+  transform: translateY(1px);
+}
+
+.promo-button::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 20px;
+  bottom: -1px;                 /* layo sa text */
+  height: 3px;
+  border-radius: 999px;
+  background: #ffffff;         /* underline color */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.promo-button:hover {
+  background: #315a39;   /* pill becomes green */
+  color: #ffffff;        /* text becomes white */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.promo-button:hover::after {
+  transform: scaleX(1);        /* lalabas yung underline */
+}
+
+/* Social Section (below form) */
+.social-section {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Divider line + text */
+.social-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.social-divider span {
+  white-space: nowrap;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Icons row */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  font-size: 28px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.social-icons a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #315a39;
+}
+
+/* Copyright */
+.copyright {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}
+
+/* show pass */
+/* base style for all inputs in the form */
+.register-form input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #f8f8ff;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+/* password */
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* keep space for icon inside */
+.password-input {
+  padding-right: 40px;
+}
+
+/* pull icon further inside the input */
+.toggle-password {
+  position: absolute;
+  right: 40px;          /* smaller = more inside */
+  top: 36%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;      /* shrink or grow icon */
+}
+
+/* hover */
+
+/* hover color for icon */
+.toggle-password:hover {
+  color: #01b12d;
+}
+
+/* messages under field */
+.field-error {
+  color: #e53935;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.account-message.error {
+  color: #e53935;
+}
+
+.account-message.success {
+  color: #2e7d32;
+}
+
+

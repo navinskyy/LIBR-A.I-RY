@@ -1,0 +1,63 @@
+.foundation-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* center under navbar */
+}
+
+/* Bigger, fixed-size book that stays similar on all screens */
+.book {
+  width: 520px;        /* increased from 360px */
+  height: 340px;       /* increased from 240px */
+  max-width: 90vw;     /* prevent overflow on very small screens */
+  max-height: 70vh;
+  perspective: 1200px;
+  position: relative;
+}
+
+.book_page {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* left page: cover, right page: title */
+.book_cover {
+  left: 0;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.book_title {
+  right: 0;
+  z-index: 1;
+  transform: rotateY(-180deg);
+}
+
+/* Flip animation triggered by radio inputs */
+#page-2:checked ~ .book .book_cover {
+  transform: rotateY(-180deg);
+}
+#page-2:checked ~ .book .book_title {
+  transform: rotateY(0deg);
+}
+#page-1:checked ~ .book .book_cover {
+  transform: rotateY(0deg);
+}
+#page-1:checked ~ .book .book_title {
+  transform: rotateY(-180deg);
+}
+
+.cover-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}

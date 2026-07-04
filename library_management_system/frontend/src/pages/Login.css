@@ -1,0 +1,236 @@
+/* Layout Containers */
+.login-layout {
+  display: flex;
+  min-height: 35vh;
+  max-width: 900px;
+  margin: 120px auto 0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+/* Left (Form) Side */
+.login-left {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: #fff;
+  padding-top: 80px;
+}
+
+/* Right (Promo) Side */
+.login-right {
+  flex: 1;
+  display: flex;
+  max-width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #315a39, #97cf8a 80%);
+  color: #fff;
+  padding: 40px;
+}
+
+.login-left,
+.login-right {
+  width: 200px;
+  min-width: 320px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form Container */
+.login-form {
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 32px;
+  box-shadow: 0 8px 32px 0 rgba(31,30,41,0.10);
+  border-radius: 60px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form Title */
+.login-form .form-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 28px;
+  color: #232323;
+}
+
+/* Input Fields */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 80%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #f4f4fa;
+  transition: box-shadow 0.3s, border 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-form input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #a8e6cf;
+  border: 1px solid #a8e6cf;
+}
+
+/* Button Styling */
+.login-form button {
+  position: relative;
+  background: #ffffff;
+  color: #315a39;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 2px solid #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.login-form button:active {
+  transform: translateY(1px);
+}
+
+.login-form button::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 999px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.login-form button:hover {
+  background: #315a39;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.login-form button:hover::after {
+  transform: scaleX(1);
+}
+
+/* Right-side title/button reuse (optional) */
+.login-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.login-button {
+  margin-top: 10px;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #ffffff;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.login-button::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 20px;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 999px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.login-button:hover {
+  background: #315a39;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.login-button:hover::after {
+  transform: scaleX(1);
+}
+/* Social Section (below form) */
+.socialLogin-section {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  font-size: 14px;
+  color: #eb0000;
+}
+
+/* Divider line + text */
+.socialLogin-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.socialLogin-divider::before,
+.socialLogin-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.socialLogin-divider span {
+  white-space: nowrap;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Icons row */
+.socialLogin-icons {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  font-size: 28px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.socialLogin-icons a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.socialLogin-icons a:hover {
+  color: #315a39;
+}
+
+/* Copyright */
+.copyrightLogin {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}

@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,400,500,600,700');
+
+body {
+  color: #E5DADA;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: black;
+}
+body::-webkit-scrollbar-thumb {
+  background: #454545;
+  border-radius: 3px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: grey;
+}
+
+.page-title {
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: normal;
+  color: #000000;
+  
+}
+
+.settings-page {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  max-width: 1100px;   /* control width */
+  min-height: 500px;   /* control height of black area */
+  margin: 60px auto;   /* center with margins around */
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  padding: 40px 30px;
+}
+
+.settings-page .settings-container {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  padding: 20px;
+  padding-top: 40px;
+  
+}
+
+.settings-page .settings-container .settings-title {
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.settings-page .settings-container .settings-section {
+  width: 100%;
+  border-top: 2px solid #454545;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Forms inside sections */
+
+.settings-page .settings-container .settings-section .my-form {
+  max-width: 600px;
+  width: 100%;
+  margin: 40px auto;
+  display:flex;
+  flex-direction: column;   /* stack inputs + button */
+  gap: 10px;                /* small space between groups */
+}
+
+.settings-page .settings-container .settings-section .my-form .form-submit.right {
+  justify-content: flex-end;
+}
+
+.settings-page .settings-container .settings-section .my-form .form-submit {
+  display: flex;
+}
+
+.settings-page .settings-container .settings-section .my-form .form-submit .btn {
+  width: 50%;
+}
+
+.settings-page
+  .settings-container
+  .settings-section
+  .my-form
+  .form-group.editable
+  .input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.settings-page
+  .settings-container
+  .settings-section
+  .my-form
+  .form-group.editable
+  .input-group
+  .form-control {
+  margin-bottom: 0;
+}
+
+.settings-page
+  .settings-container
+  .settings-section
+  .my-form
+  .form-group.editable
+  .input-group
+  .btn {
+  height: 38px;
+  margin: 0 10px;
+  background-color: #E59500;
+  transition: all 0.5s;
+}
+
+.settings-page
+  .settings-container
+  .settings-section
+  .my-form
+  .form-group.editable
+  .input-group
+  .btn:hover {
+  color: #E59500;
+  background-color: #E5DADA;
+}
+
+.settings-page
+  .settings-container
+  .settings-section
+  .my-form
+  .form-group.editable
+  .input-group
+  i {
+  cursor: pointer;
+  color: #454545;
+  transition: all 0.5s;
+}
+
+.settings-page
+  .settings-container
+  .settings-section
+  .my-form
+  .form-group.editable
+  .input-group
+  i:hover {
+  color: #E59500;
+}
+
+/* Non-active form rows */
+
+.settings-page .settings-container .settings-section .non-active-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.settings-page .settings-container .settings-section .non-active-form p {
+  padding: 7px 15px;
+  margin-bottom: 0;
+  font-size: 1rem;
+  cursor: default;
+  color: #000000;
+}
+
+.settings-page .settings-container .settings-section .non-active-form i {
+  cursor: pointer;
+  color: #454545;
+  transition: all 0.5s;
+  margin-right: 10px;
+}
+
+.settings-page .settings-container .settings-section .non-active-form i:hover {
+  color: #E59500;
+  transform: scale(1.1);
+}
+
+/* Generic form styles used by password form */
+
+.my-form {
+  visibility: visible;
+}
+
+.my-form .form-group .input-group {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.my-form .form-group .input-group input.form-control {
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  background-color: #dfdfdf;
+  color: #050404;
+  font-family: 'Fira Sans', sans-serif;
+  width: 100%;
+  border-radius: 4px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.my-form .form-group .alert-input {
+  color: #E59500;
+  font-weight: 100;
+  font-size: 13px;
+}
+
+.my-form .form-submit {
+  width: 100%;
+}
+
+.my-form .form-submit .btn {
+  width: 100%;
+  max-width: 300px;
+  padding: 5px 0;    /* taller */
+  border-radius: 0.25rem;
+  background-color: grey;
+  color: #E5DADA;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: background-color 0.2s ease, 
+              box-shadow 0.2s ease,
+              transform 0.1s ease;
+}
+
+.my-form .form-submit .btn:disabled {
+  opacity: 0.75;
+}
+
+.my-form .form-submit .btn:not(:disabled):not(.disabled) {
+  background-color: #020202;
+}
+
+/* hover: green glow + slight lift */
+.my-form .form-submit .btn:hover {
+  box-shadow: 0 0 0 3px #2f6b3b;
+  transform: translateY(-1px);
+  background-color: #020202;
+}
+
+/* focus (clicked/keyboard focus): stronger outline */
+.my-form .form-submit .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #2f6b3b;
+}
+
+/* active (while mouse is pressed) */
+.my-form .form-submit .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 2px #2f6b3b;
+}
+
+/* focus (clicked/typing): stronger green glow */
+.my-form .form-group .input-group input.form-control:focus {
+  outline: none;
+  border-color: #2f6b3b;
+  box-shadow: 0 0 0 3px rgba(47,107,59,.35);
+}
+
+input::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+/* View Password */
+
+.password-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-group .form-control {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: #0f0a0a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover {
+  color: #01b12d;
+}
+
+/* password settings */
+
+.field-error {
+  color: #e53935;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.account-message.error {
+  color: #e53935;
+}
+
+.account-message.success {
+  color: #2e7d32;
+}

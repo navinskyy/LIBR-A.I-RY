@@ -1,0 +1,91 @@
+.borrow-history-container {
+  padding: 24px;
+}
+
+.borrow-history-title {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.borrow-history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.borrow-card {
+  background: #fdfbf7;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.borrow-cover-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.borrow-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.borrow-card-body {
+  padding: 16px 18px 18px;
+}
+
+.borrow-book-title {
+  font-size: 1.1rem;
+  margin: 0 0 4px;
+}
+
+.borrow-book-author {
+  margin: 0 0 12px;
+  font-style: italic;
+  color: #4b5563;
+}
+
+.borrow-dates p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.borrow-dates {
+  margin: 10px 0;
+}
+
+.borrow-status {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.borrow-status-borrowed {
+  color: #15803d;
+}
+
+.borrow-status-returned {
+  color: #b91c1c;
+}
+
+.borrow-return-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #b91c1c;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.borrow-return-btn:hover {
+  background: #991b1b;
+}

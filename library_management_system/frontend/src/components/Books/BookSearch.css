@@ -1,0 +1,440 @@
+/* BookSearch.css - Updated to match main site UI with green accents */
+
+/* Base container */
+.book-search-container {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+  line-height: 1.5;
+  max-width: 1200px;
+  margin: 7.5rem auto 0;             /* push card slightly down */
+  padding: 2.5rem 2rem 2.75rem;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Header */
+.book-search-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.7);
+  
+}
+
+
+.book-search-header h1 {
+  font-family: 'Georgia', serif; /* or any font you prefer */
+  font-size: 2.3rem;                 /* larger title */
+  font-weight: 700;
+  color: #315a39;
+  margin: 0 0 0.55rem 0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.book-search-header p {
+  font-size: 0.98rem;
+  color: #6b7280;
+  max-width: 520px;
+  margin: 0rem auto 0;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Search Section */
+.search-section {
+  margin-bottom: 2.25rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 0.9rem 3rem 0.9rem 1.1rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  transition: all 0.18s ease;
+}
+
+/* Green focus instead of violet */
+.search-input-wrapper input:focus {
+  outline: none;
+  border-color: #315a39;
+  box-shadow: 0 0 0 3px rgba(49, 90, 57, 0.18);
+  background-color: #ffffff;
+}
+
+.input-icon {
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+  width: 18px;
+  height: 18px;
+}
+
+.search-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.search-btn,
+.clear-btn {
+  padding: 0.55rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Primary Search button now green (#315a39) */
+.search-btn {
+  background-color: #315a39;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(49, 90, 57, 0.35);
+}
+
+.search-btn:hover:not(:disabled) {
+  background-color: #284a2f;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(49, 90, 57, 0.45);
+}
+
+.search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Clear button with subtle green accent */
+.clear-btn {
+  background-color: #f3f5f2;
+  color: #315a39;
+}
+
+.clear-btn:hover {
+  background-color: #e5ede6;
+}
+
+/* Spinner */
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Results Section */
+.results-section {
+  margin-bottom: 1.5rem;
+}
+
+.results-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #315a39;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Books Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Book Card */
+.book-card {
+  background: #fbfdfb;
+  border-radius: 18px;
+  padding: 1.4rem 1.5rem 1.3rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  transition: all 0.16s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-card:hover {
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+  transform: translateY(-2px);
+  border-color: #c4d6c0;
+}
+
+.book-cover {
+  position: relative;
+  height: 240px;
+  background-color: #b1dd9e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.book-cover img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: cover;
+}
+
+.book-info h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.45rem;
+  line-height: 1.45;
+}
+
+.author {
+  color: #4b5563;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+/* Meta pills */
+.book-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.isbn,
+.published {
+  background-color: #eef2ff;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+}
+
+/* Reserve button (green pill) */
+.reserve-btn {
+  margin-top: auto;
+  background-color: #166534;
+  color: #ffffff;
+  padding: 0.55rem 1.3rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  align-self: flex-start;
+  font-size: 0.85rem;
+  box-shadow: 0 10px 24px rgba(22, 101, 52, 0.35);
+}
+
+.reserve-btn:hover {
+  background-color: #14532d;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(22, 101, 52, 0.45);
+}
+
+/* Pagination styled to match site */
+.ourbooks-pagination {
+  margin-top: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.ourbooks-pagination button {
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background: #315a39;           /* same green as other CTAs */
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(49, 90, 57, 0.35);
+  transition: background-color 0.18s ease,
+              transform 0.18s ease,
+              box-shadow 0.18s ease;
+}
+
+.ourbooks-pagination button:hover:not(:disabled) {
+  background: #284a2f;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(49, 90, 57, 0.45);
+}
+
+.ourbooks-pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  background: #e5ede6;
+  color: #6b7280;
+}
+
+.ourbooks-pagination span {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #fbfdfb;
+  border-radius: 18px;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  font-family: "Outfit", sans-serif;
+}
+
+.empty-icon {
+  color: #9ca3af;
+  margin-bottom: 1.1rem;
+}
+
+.empty-icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+.empty-state h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #315a39;
+  margin-bottom: 0.4rem;
+}
+
+.empty-state p {
+  color: #6b7280;
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .book-search-container {
+    padding: 1.75rem 1.2rem;
+  }
+
+  .book-search-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .search-buttons {
+    flex-direction: column;
+  }
+
+  .search-btn,
+  .clear-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-search-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .book-info h3 {
+    font-size: 1rem;
+  }
+}
+
+.edit-btn {
+  background-color: #2563eb;
+}
+
+.edit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.edit-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.edit-modal {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 12px;
+  width: min(500px, 95vw);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.edit-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.edit-form input {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-family: inherit;
+}
+
+.edit-modal-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+
