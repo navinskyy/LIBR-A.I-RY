@@ -74,7 +74,8 @@ This project was developed to provide a centralized platform for managing librar
 ## 👨‍💻 Developers
 
 - **Navin Byron B. Llanes**
-- **Coffee Quest Development Team**
+- **George Louise Macapagal**
+- **Emman Casimsiman**
 
 ## 📄 License
 
